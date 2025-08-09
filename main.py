@@ -104,7 +104,7 @@ def generate_discord_message(data):
     ]
 
     if find_egg and find_gear and find_seed:
-        title = "📜 Laporan Harian Stok\n"
+        title = "📜 Stock Ingfo\n"
 
         # Seed Stock
         message = "🌱 **Seed**\n"
