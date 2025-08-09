@@ -177,6 +177,7 @@ def generate_discord_message(data):
             message = f"**{status_emoji} {weather_name}**\n"
             message += f"- Status: {'Aktif' if is_active == True else 'Tidak Aktif'}\n"
             message += f"- Durasi: {duration // 60} menit {duration % 60} detik\n\n"
+            message += f"- Berakhir: <t:{weather['end_duration_unix']}:R>*\n\n"
             embed = discord.Embed(
                 title=title,
                 description=message,
