@@ -100,7 +100,7 @@ def generate_discord_message(data):
 
     weather_exists = [
         item for item in data.get('weather', [])
-        if item.get('active', False) == "True"
+        if item.get('active', False) == True
     ]
 
     if find_egg or find_gear or find_seed:
@@ -168,14 +168,14 @@ def generate_discord_message(data):
         title = "☀️ Weather Event\n"
         for weather in weather_exists:
             weather_name = weather.get('weather_name', 'Unknown')
-            is_active = weather.get('active', "False")
+            is_active = weather.get('active', False)
             duration = weather.get('duration', 0)
 
             # Tambahkan emoji berdasarkan status cuaca
-            status_emoji = "✅" if is_active == "True" else "❌"
+            status_emoji = "✅" if is_active == True else "❌"
 
             message = f"**{status_emoji} {weather_name}**\n"
-            message += f"- Status: {'Aktif' if is_active == "True" else 'Tidak Aktif'}\n"
+            message += f"- Status: {'Aktif' if is_active == True else 'Tidak Aktif'}\n"
             message += f"- Durasi: {duration // 60} menit {duration % 60} detik\n\n"
             embed = discord.Embed(
                 title=title,
