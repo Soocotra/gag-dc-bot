@@ -8,7 +8,11 @@ import os
 import motor.motor_asyncio
 import logging
 
+from keep_alive import keep_alive
+
 dotenv.load_dotenv()
+
+keep_alive()
 
 TOKEN = os.getenv('BOT_TOKEN')
 WS_URL = os.getenv('WS_URL') + '?jstudio-key=' + os.getenv('WS_TOKEN')
