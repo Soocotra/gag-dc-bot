@@ -103,7 +103,7 @@ def generate_discord_message(data):
         if item.get('active', False) == "True"
     ]
 
-    if find_egg and find_gear and find_seed:
+    if find_egg or find_gear or find_seed:
         title = "📜 Stock Ingfo\n"
 
         # Seed Stock
